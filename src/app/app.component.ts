@@ -28,4 +28,10 @@ export class AppComponent {
   toggleImage(event) {
     this.imageStatus = !this.imageStatus
   }
+
+  findMovie(event) {
+    event.preventDefault()
+    var movieInput = document.getElementById('movie').value
+    console.log(movieInput)
+  }
 }

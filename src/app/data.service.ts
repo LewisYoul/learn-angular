@@ -12,8 +12,8 @@ export class DataService {
       .then(res => {
         return res.results
       });
-      .catch(err => {
-        console.log(err)
-      });
+      // .catch(err => {
+      //   console.log(err)
+      // });
   }
 }
