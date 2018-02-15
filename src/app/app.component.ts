@@ -43,5 +43,6 @@ export class AppComponent {
   saveMovie(event, movie) {
     event.preventDefault();
     console.log(movie)
+    this.dataService.postMovieToDb(movie)
   }
 }
