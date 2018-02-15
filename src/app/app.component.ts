@@ -8,4 +8,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'My first Angular App!';
   thingsIlike = ['Cycling', 'Tennis', 'Programming'];
+  people = [
+    {
+      name: "John",
+      age: 25,
+      sport: "Football"
+    },
+    {
+      name: "Tim",
+      age: 32,
+      sport: "Cycling"
+    },
+    {
+      name: "Lewis",
+      age: 29,
+      sport: "Tennis"
+    }
+  ]
 }
