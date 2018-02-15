@@ -12,12 +12,11 @@ export class AppComponent {
 
   }
 
-  movieData:any = [];
+  movieData:any
 
   ngOnInit() {
     this.dataService.searchMovieDb().then(
       res => {
-        console.log(res)
         this.movieData = res
         console.log(this.movieData)
       }
