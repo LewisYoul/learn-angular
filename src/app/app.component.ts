@@ -26,4 +26,5 @@ export class AppComponent {
     }
   ];
   buttonStatus = false;
+  imageUrl = "/assets/images/lewis.jpg"
 }
