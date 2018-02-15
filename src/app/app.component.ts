@@ -26,5 +26,10 @@ export class AppComponent {
     }
   ];
   buttonStatus = false;
-  imageUrl = "/assets/images/lewis.jpg"
+  imageUrl = "/assets/images/lewis.jpg";
+  imageStatus = true;
+
+  toggleImage(event) {
+    this.imageStatus = !this.imageStatus
+  }
 }

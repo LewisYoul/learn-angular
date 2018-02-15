@@ -7,6 +7,9 @@
   <ul>
     <li *ngFor="let person of people">{{ person.name }} is {{ person.age }} years old and loves {{ person.sport }}</li>
   </ul>
-  <button [disabled]="buttonStatus">Click Me!</button>
-  <img width="300" alt="Angular Logo" [src]="imageUrl">
+  <!-- <img width="300" alt="Angular Logo" [src]="imageUrl"> -->
+  <div *ngIf="imageStatus; then img1 else img2"></div>
+  <ng-template #img1><img height="200" src="/assets/images/lewis.jpg"></ng-template>
+  <ng-template #img2><img height="200" src="/assets/images/roger.jpeg"></ng-template>
 </div>
+<button (click)="toggleImage($event)">Click Me!</button>
