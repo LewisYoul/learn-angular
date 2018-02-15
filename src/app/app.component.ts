@@ -14,14 +14,14 @@ export class AppComponent {
 
   movieData:any
 
-  ngOnInit() {
-    this.dataService.searchMovieDb().then(
-      res => {
-        this.movieData = res
-        console.log(this.movieData)
-      }
-    )
-  }
+  // ngOnInit() {
+  //   this.dataService.searchMovieDb().then(
+  //     res => {
+  //       this.movieData = res
+  //       console.log(this.movieData)
+  //     }
+  //   )
+  // }
 
   title = 'Movie App';
 
@@ -32,6 +32,10 @@ export class AppComponent {
   findMovie(event) {
     event.preventDefault()
     var movieInput = document.getElementById('movie').value
-    console.log(movieInput)
+    this.dataService.searchMovieDb(movieInput).then(
+      res => {
+        this.movieData = res
+      }
+    )
   }
 }

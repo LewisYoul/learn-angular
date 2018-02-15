@@ -6,14 +6,14 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  searchMovieDb() {
-    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=121486b23802e0b6735125ff1892f340')
+  searchMovieDb(title) {
+    return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=121486b23802e0b6735125ff1892f340&query=${title}`)
       .toPromise()
       .then(res => {
+        console.log(res)
         return res.results
       });
-      // .catch(err => {
-      //   console.log(err)
-      // });
   }
+
+
 }
