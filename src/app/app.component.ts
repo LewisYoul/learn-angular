@@ -24,5 +24,6 @@ export class AppComponent {
       age: 29,
       sport: "Tennis"
     }
-  ]
+  ];
+  buttonStatus = false;
 }
