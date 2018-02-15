@@ -2,13 +2,12 @@
 <div style="text-align:center">
   <h1>{{ title }}</h1>
   <app-sub-heading></app-sub-heading>
-  <!-- <ul>
-    <li *ngFor="let person of people">{{ person.name }} is {{ person.age }} years old and loves {{ person.sport }}</li>
-  </ul> -->
+  <ul>
+    <li *ngFor="let movie of movieData">{{ movie.original_title }}</li>
+  </ul>
   <!-- <img width="300" alt="Angular Logo" [src]="imageUrl"> -->
   <!-- <div *ngIf="imageStatus; then img1 else img2"></div>
   <ng-template #img1><img height="200" src="/assets/images/lewis.jpg"></ng-template>
   <ng-template #img2><img height="200" src="/assets/images/roger.jpeg"></ng-template> -->
-  <p>{{ movieData }}</p>
 </div>
 <!-- <button (click)="toggleImage($event)">Click Me!</button> -->
