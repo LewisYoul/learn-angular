@@ -11,6 +11,8 @@
       <p>{{ movie.original_title }}</p>
       <p>{{ movie.overview }}</p>
       <img src="http://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
+      <br>
+      <button (click)="saveMovie($event, [movie])">Save Movie</button>
     </li>
   </ul>
   <!-- <img width="300" alt="Angular Logo" [src]="imageUrl"> -->

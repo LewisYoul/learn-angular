@@ -39,4 +39,9 @@ export class AppComponent {
     )
     document.getElementById('movie').value = ''
   }
+
+  saveMovie(event, movie) {
+    event.preventDefault();
+    console.log(movie)
+  }
 }
