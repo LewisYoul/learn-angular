@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,28 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My first Angular App!';
-  thingsIlike = ['Cycling', 'Tennis', 'Programming'];
-  people = [
-    {
-      name: "John",
-      age: 25,
-      sport: "Football"
-    },
-    {
-      name: "Tim",
-      age: 32,
-      sport: "Cycling"
-    },
-    {
-      name: "Lewis",
-      age: 29,
-      sport: "Tennis"
-    }
-  ];
-  buttonStatus = false;
-  imageUrl = "/assets/images/lewis.jpg";
-  imageStatus = true;
+
+  constructor(private dataService:DataService) {
+
+  }
+
+  someProperty:string = '';
+
+  ngOnInit() {
+    this.someProperty = this.dataService.searchMovieDb();
+  }
+
+  title = 'Movie App';
 
   toggleImage(event) {
     this.imageStatus = !this.imageStatus
