@@ -12,10 +12,15 @@ export class AppComponent {
 
   }
 
-  someProperty:string = '';
+  movieData:any = [];
 
   ngOnInit() {
-    this.someProperty = this.dataService.searchMovieDb();
+    this.dataService.searchMovieDb().then(
+      res => {
+        console.log(res)
+        this.movieData = res
+      }
+    )
   }
 
   title = 'Movie App';

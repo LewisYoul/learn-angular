@@ -7,11 +7,11 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   searchMovieDb() {
-    this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=121486b23802e0b6735125ff1892f340')
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=121486b23802e0b6735125ff1892f340')
       .toPromise()
       .then(res => {
-        console.log(res)
+        console.log(res.results)
+        return res
       });
-    return 'Searching...'
   }
 }
