@@ -37,5 +37,6 @@ export class AppComponent {
         this.movieData = res
       }
     )
+    document.getElementById('movie').value = ''
   }
 }
