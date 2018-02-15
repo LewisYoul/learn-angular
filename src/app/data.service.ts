@@ -11,7 +11,7 @@ export class DataService {
       .toPromise()
       .then(res => {
         console.log(res.results)
-        return res
+        return res.results
       });
   }
 }

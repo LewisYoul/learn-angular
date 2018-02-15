@@ -18,7 +18,7 @@ export class AppComponent {
     this.dataService.searchMovieDb().then(
       res => {
         console.log(res)
-        this.movieData = res.results
+        this.movieData = res
         console.log(this.movieData)
       }
     )
