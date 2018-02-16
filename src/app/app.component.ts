@@ -23,7 +23,7 @@ export class AppComponent {
   //   )
   // }
 
-  title = 'Movie App';
+  showSubHeading = true;
 
   findMovie = (event) => {
     event.preventDefault()

@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>{{ title }}</h1>
-  <app-sub-heading></app-sub-heading>
+  <app-title></app-title>
+  <app-sub-heading *ngIf="showSubHeading"></app-sub-heading>
   <form>
     <input id="movie" type="text" name="movie">
     <button (click)="findMovie($event)">Find Movie</button>

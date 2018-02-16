@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SubHeadingComponent } from './sub-heading/sub-heading.component';
-import { DataService } from './data.service'
+import { DataService } from './data.service';
+import { TitleComponent } from './title/title.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubHeadingComponent
+    SubHeadingComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
