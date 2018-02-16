@@ -1,11 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <app-title></app-title>
-  <app-sub-heading *ngIf="showSubHeading"></app-sub-heading>
-  <form>
-    <input id="movie" type="text" name="movie">
-    <button (click)="findMovie($event)">Find Movie</button>
-  </form>
+  <div>
+    <app-title></app-title>
+    <app-sub-heading></app-sub-heading>
+    <app-movie-search-form (onMovieSearch)="onMovieSearch($event)"></app-movie-search-form>
+  </div>
   <ul>
     <li *ngFor="let movie of movieData">
       <p>{{ movie.original_title }}</p>

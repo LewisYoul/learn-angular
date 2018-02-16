@@ -8,32 +8,14 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
 
-  constructor(private dataService:DataService) {
-
-  }
+  constructor(private dataService:DataService) {}
 
   movieData:any
-
-  // ngOnInit() {
-  //   this.dataService.searchMovieDb().then(
-  //     res => {
-  //       this.movieData = res
-  //       console.log(this.movieData)
-  //     }
-  //   )
-  // }
-
   showSubHeading = true;
 
-  findMovie = (event) => {
-    event.preventDefault()
-    var movieInput = document.getElementById('movie').value
-    this.dataService.searchMovieDb(movieInput).then(
-      res => {
-        this.movieData = res
-      }
-    )
-    document.getElementById('movie').value = ''
+  onMovieSearch = (res) => {
+    this.movieData = res
+    console.log(this.movieData)
   }
 
   saveMovie = (event, movie) => {
