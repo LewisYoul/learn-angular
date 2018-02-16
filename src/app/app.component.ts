@@ -25,11 +25,7 @@ export class AppComponent {
 
   title = 'Movie App';
 
-  toggleImage(event) {
-    this.imageStatus = !this.imageStatus
-  }
-
-  findMovie(event) {
+  findMovie = (event) => {
     event.preventDefault()
     var movieInput = document.getElementById('movie').value
     this.dataService.searchMovieDb(movieInput).then(
@@ -40,9 +36,9 @@ export class AppComponent {
     document.getElementById('movie').value = ''
   }
 
-  saveMovie(event, movie) {
+  saveMovie = (event, movie) => {
     event.preventDefault();
-    console.log(movie)
+    console.log("I'M THE SAVED MOVIE", movie)
     this.dataService.postMovieToDb(movie)
   }
 }

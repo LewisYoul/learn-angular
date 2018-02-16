@@ -6,7 +6,7 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  searchMovieDb(title) {
+  searchMovieDb = (title) => {
     return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=121486b23802e0b6735125ff1892f340&query=${title}`)
       .toPromise()
       .then(res => {
@@ -15,7 +15,7 @@ export class DataService {
       });
   }
 
-  postMovieToDb(movie) {
+  postMovieToDb = (movie) => {
     console.log(movie)
     this.http.post('http://localhost:3000/movies', {
       title: movie.title,
