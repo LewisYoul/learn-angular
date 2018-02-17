@@ -16,14 +16,14 @@ export class MovieSearchFormComponent implements OnInit {
 
   findMovie = (event) => {
     event.preventDefault()
-    var movieInput = document.getElementById('movie').value
+    var movieInput = document.getElementById('movie')['value']
     this.dataService.searchMovieDb(movieInput).then(
       res => {
         console.log(res)
         this.onMovieSearch.emit(res);
       }
     )
-    document.getElementById('movie').value = ''
+    document.getElementById('movie')['value'] = ''
   }
 
 }
