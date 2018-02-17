@@ -1,5 +1,13 @@
 # FirstAngular
 
+## To Do List
+
+* Create a faux log in page - in prep for real one
+* Button on movie search page to show all saved movies
+* Create user table and one-many relationship with movies in rails API
+* Begin understanding testing in Angular
+* Convert to Ionic App
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
 
 ## Development server
