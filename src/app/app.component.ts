@@ -12,6 +12,11 @@ export class AppComponent {
 
   movieData:any
   showSubHeading = true;
+  loggedIn = false;
+
+  toggleLogIn = (event) => {
+    this.loggedIn = !this.loggedIn
+  }
 
   onMovieSearch = (res) => {
     this.movieData = res
