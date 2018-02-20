@@ -1,3 +1,8 @@
-<p>
-  favourites works!
-</p>
+<ul>
+  <li *ngFor="let movie of favouritesData">
+    <p>{{ movie.original_title }}</p>
+    <p>{{ movie.overview }}</p>
+    <img src="http://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
+    <br>
+  </li>
+</ul>
