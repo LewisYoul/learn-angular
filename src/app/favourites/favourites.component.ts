@@ -12,6 +12,7 @@ export class FavouritesComponent implements OnInit {
 
   favouritesData:any;
   cloneArray:object[];
+  test:any;
 
   dummyMovie:object = {
     original_title: "cool",
@@ -27,20 +28,20 @@ export class FavouritesComponent implements OnInit {
 
   moveUp = (i) => {
     if (i > 0) {
-      this.cloneArray = this.favouritesData.slice()
-      this.cloneArray[i - 1] = this.favouritesData[i]
-      this.cloneArray[i] = this.favouritesData[i - 1]
-      this.favouritesData = this.cloneArray
+      this.moveMovie(i, '-')
     }
   }
 
   moveDown = (i) => {
     if (i < this.favouritesData.length - 1) {
-      this.cloneArray = this.favouritesData.slice()
-      this.cloneArray[i + 1] = this.favouritesData[i]
-      this.cloneArray[i] = this.favouritesData[i + 1]
-      this.favouritesData = this.cloneArray
+      this.moveMovie(i, '+')
     }
   }
 
+  moveMovie = (i, action) => {
+    this.cloneArray = this.favouritesData.slice()
+    this.cloneArray[eval(`i ${action} 1`)] = this.favouritesData[i]
+    this.cloneArray[i] = this.favouritesData[eval(`i ${action} 1`)]
+    this.favouritesData = this.cloneArray
+  }
 }
