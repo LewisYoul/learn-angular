@@ -25,7 +25,6 @@ export class IndexComponent implements OnInit {
 
   saveMovie = (event, movie) => {
     event.preventDefault();
-    console.log("I'M THE SAVED MOVIE", movie)
     this.dataService.postMovieToDb(movie)
   }
 

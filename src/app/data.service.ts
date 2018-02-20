@@ -25,9 +25,7 @@ export class DataService {
       vote_average: movie.vote_average
     })
       .subscribe(
-        res => {
-          console.log(res)
-        },
+        res => {},
         err => {
           console.log(err)
         }
