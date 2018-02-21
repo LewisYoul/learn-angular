@@ -27,7 +27,13 @@ export class FavouritesComponent implements OnInit {
   }
 
   moveUp = (ranking) => {
-    if (ranking > 0) {
+    if (ranking > 1) {
+      this.cloneArray = this.favouritesData.slice()
+      this.cloneArray[ranking - 2] = this.favouritesData[ranking - 1]
+      this.cloneArray[ranking - 1] = this.favouritesData[ranking - 2]
+      this.cloneArray[ranking - 2]['ranking'] = ranking - 1
+      this.cloneArray[ranking - 1]['ranking'] = ranking
+      this.favouritesData = this.cloneArray
       // this.moveMovie(ranking, '-')
     }
   }
