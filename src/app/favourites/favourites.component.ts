@@ -26,22 +26,22 @@ export class FavouritesComponent implements OnInit {
     })
   }
 
-  moveUp = (i) => {
-    if (i > 0) {
-      this.moveMovie(i, '-')
+  moveUp = (ranking) => {
+    if (ranking > 0) {
+      this.moveMovie(ranking, '-')
     }
   }
 
-  moveDown = (i) => {
-    if (i < this.favouritesData.length - 1) {
-      this.moveMovie(i, '+')
+  moveDown = (ranking) => {
+    if (ranking < this.favouritesData.length - 1) {
+      this.moveMovie(ranking, '+')
     }
   }
 
-  moveMovie = (i, action) => {
+  moveMovie = (ranking, action) => {
     this.cloneArray = this.favouritesData.slice()
-    this.cloneArray[eval(`i ${action} 1`)] = this.favouritesData[i]
-    this.cloneArray[i] = this.favouritesData[eval(`i ${action} 1`)]
+    this.cloneArray[eval(`ranking ${action} 1`)] = this.favouritesData[ranking]
+    this.cloneArray[ranking] = this.favouritesData[eval(`ranking ${action} 1`)]
     this.favouritesData = this.cloneArray
   }
 }
