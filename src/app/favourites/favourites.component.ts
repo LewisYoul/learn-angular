@@ -33,7 +33,7 @@ export class FavouritesComponent implements OnInit {
   }
 
   moveDown = (ranking) => {
-    if (ranking < this.favouritesData.length - 1) {
+    if (ranking < this.favouritesData.length) {
       this.moveMovie(ranking, '+')
     }
   }
