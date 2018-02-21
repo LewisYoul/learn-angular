@@ -1,11 +1,11 @@
 <ul>
-  <li *ngFor="let movie of favouritesData; let i = index" [attr.data-index]="i">
+  <li *ngFor="let movie of favouritesData">
     <p>{{ movie.original_title }}</p>
     <p>{{ movie.overview }}</p>
     <img src="http://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
     <br>
-    <p>{{ i+1 }}</p>
-    <button (click)="moveUp(i)">Up</button>
-    <button (click)="moveDown(i)">Down</button>
+    <p>{{ movie.ranking }}</p>
+    <button (click)="moveUp(movie.ranking)">Up</button>
+    <button (click)="moveDown(movie.ranking)">Down</button>
   </li>
 </ul>
