@@ -39,4 +39,21 @@ export class DataService {
         return res;
       });
   }
+
+  updateRatings = (movie) => {
+    this.http.put(`http://localhost:3000/movies/${movie.id}`, {
+      movie: {
+        title: movie.title,
+        ranking: movie.ranking
+      }
+    })
+      .subscribe(
+        res => {
+          console.log(res)
+        },
+        err => {
+          console.log(err)
+        }
+      );
+  }
 }
