@@ -3,6 +3,7 @@
   <div *ngIf="loggedIn">
     <app-sub-heading></app-sub-heading>
     <app-movie-search-form (onMovieSearch)="onMovieSearch($event)"></app-movie-search-form>
+    <a href="/favourites">View Favourites</a>
   </div>
   <div *ngIf="!loggedIn">
     Click the button to log in!
