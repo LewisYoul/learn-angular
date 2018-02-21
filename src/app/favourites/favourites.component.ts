@@ -10,8 +10,8 @@ export class FavouritesComponent implements OnInit {
 
   constructor(private dataService:DataService) {}
 
-  favouritesData:object[];
-  cloneArray:object[];
+  favouritesData:any;
+  cloneArray:any;
   dummyMovie:any;
 
   ngOnInit() {
@@ -45,12 +45,9 @@ export class FavouritesComponent implements OnInit {
   }
 
   saveRatings = (favs) => {
-    this.dummyMovie = {
-      title: "A Serbian Film",
-      id: 1,
-      ranking: 5
-    }
-    this.dataService.updateRatings(this.dummyMovie)
+    this.favouritesData.forEach((movie) => {
+      this.dataService.updateRatings(movie)
+    });
   }
 
   // moveMovie = (ranking, action) => {

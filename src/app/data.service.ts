@@ -43,7 +43,6 @@ export class DataService {
   updateRatings = (movie) => {
     this.http.put(`http://localhost:3000/movies/${movie.id}`, {
       movie: {
-        title: movie.title,
         ranking: movie.ranking
       }
     })
