@@ -10,15 +10,8 @@ export class FavouritesComponent implements OnInit {
 
   constructor(private dataService:DataService) {}
 
-  favouritesData:any;
+  favouritesData:object[];
   cloneArray:object[];
-  test:any;
-
-  dummyMovie:object = {
-    original_title: "cool",
-    overview: "lovely",
-    poster_path: "somewhere"
-  }
 
   ngOnInit() {
     this.dataService.getFavourites().then(res => {
