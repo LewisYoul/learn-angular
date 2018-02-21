@@ -28,29 +28,35 @@ export class FavouritesComponent implements OnInit {
 
   moveUp = (ranking) => {
     if (ranking > 0) {
-      this.moveMovie(ranking, '-')
+      // this.moveMovie(ranking, '-')
     }
   }
 
   moveDown = (ranking) => {
     if (ranking < this.favouritesData.length) {
-      this.moveMovie(ranking, '+')
+      this.cloneArray = this.favouritesData.slice()
+      this.cloneArray[ranking - 1] = this.favouritesData[ranking]
+      this.cloneArray[ranking] = this.favouritesData[ranking - 1]
+      this.cloneArray[ranking - 1]['ranking'] = ranking
+      this.cloneArray[ranking]['ranking'] = ranking + 1
+      this.favouritesData = this.cloneArray
+      // this.moveMovie(ranking, '-')
     }
   }
 
-  moveMovie = (ranking, action) => {
-    this.cloneArray = this.favouritesData.slice()
-
-    // re-order the films
-    this.cloneArray[ranking - 1] = this.favouritesData[ranking]
-    this.cloneArray[ranking] = this.favouritesData[ranking - 1]
-
-    // change rankings to reflect new positions
-    this.cloneArray[ranking - 1].ranking = ranking
-    this.cloneArray[ranking].ranking = ranking + 1
-
-    // this.cloneArray[eval(`ranking ${action} 1`)] = this.favouritesData[ranking]
-    // this.cloneArray[ranking] = this.favouritesData[eval(`ranking ${action} 1`)]
-    this.favouritesData = this.cloneArray
-  }
+  // moveMovie = (ranking, action) => {
+  //   this.cloneArray = this.favouritesData.slice()
+  //
+  //   // re-order the films
+  //   this.cloneArray[ranking - 1] = this.favouritesData[ranking]
+  //   this.cloneArray[ranking] = this.favouritesData[ranking - 1]
+  //
+  //   // change rankings to reflect new positions
+  //   this.cloneArray[ranking - 1].ranking = ranking
+  //   this.cloneArray[ranking].ranking = ranking + 1
+  //
+  //   // this.cloneArray[eval(`ranking ${action} 1`)] = this.favouritesData[ranking]
+  //   // this.cloneArray[ranking] = this.favouritesData[eval(`ranking ${action} 1`)]
+  //   this.favouritesData = this.cloneArray
+  // }
 }
